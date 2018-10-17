@@ -1,0 +1,27 @@
+{
+    "name": "StratosHeavyIndustry",
+    "engines": {
+        "node": ">= 7.6"
+    },
+    "description": "ParcelLive",
+    "main": "index.js",
+    "scripts": {
+        "deploy": "gcloud app deploy",
+        "start": "node index.js",
+        "lint": "samples lint",
+        "pretest": "npm run lint",
+        "system-test": "samples test app",
+        "test": "npm run system-test",
+        "e2e-test": "samples test deploy"
+    },
+    "devDependencies": {
+        "@google-cloud/storage": "^1.4.0",
+        "actions-on-google": "^1.6.1"
+    },
+    "private": "true",
+    "license": "ISC",
+    "dependencies": {
+        "@google-cloud/storage": "^1.4.0",
+        "actions-on-google": "^1.6.1"
+    }
+}
