@@ -187,19 +187,17 @@ function requesetParsing(insertData, apiType, callback) {
 
   //기본 요청 코드
   let forms = {
-    code: 'F367181010',
+    code: '서비스키 입력', // 서비스키 입력
     out: 'json'
   }
 
   //apiType으로 분리
   switch (apiType) {
     case 'avgAllPrice': //전국 평균가격 조회 (처음 실행시)
-      //http://www.opinet.co.kr/api/avgAllPrice.do?out=json&code=F367181010
       url = "http://www.opinet.co.kr/api/avgAllPrice.do";
       break;
 
     case 'aroundAll': //일정 반경 최저가 조회
-      //http://www.opinet.co.kr/api/aroundAll.do?code=F367181010&out=json&x=314681.8&y=544837&radius=1000&sort=1
       url = "http://www.opinet.co.kr/api/aroundAll.do";
       forms.x = insertData.x;
       forms.y = insertData.y;
@@ -209,7 +207,6 @@ function requesetParsing(insertData, apiType, callback) {
       break;
 
     case 'detailById': //주유소 자세한 정보 =>  xml로 처리
-      //http://www.opinet.co.kr/api/detailById.do?code=F367181010&id=A0009974&out=xml
       url = "http://www.opinet.co.kr/api/detailById.do";
       forms.out = 'xml'; //xml로 변경 (json은 에러때문에 사용불가)
       forms.id = insertData.id; //주유소 아이디
@@ -218,7 +215,6 @@ function requesetParsing(insertData, apiType, callback) {
 
       //사용안함
     case 'searchByName': //주유소 이름으로 검색
-      //http://www.opinet.co.kr/api/searchByName.do?code=F367181010&out=json&osnm=보라매&area=01
       url = "http://www.opinet.co.kr/api/searchByName.do";
       forms.osnm = insertData.osnm; // 주유소 이름
       //지역은 있을수도 없을수도 있음
@@ -229,7 +225,6 @@ function requesetParsing(insertData, apiType, callback) {
 
 
     case 'lowTop10': // 지역별 최저가
-      //http://www.opinet.co.kr/api/lowTop10.do?out=json&code=F367181010&prodcd=B027&area=0101
       url = "http://www.opinet.co.kr/api/lowTop10.do";
       forms.prodcd = insertData.prodcd;
       forms.area = insertData.area;
@@ -237,7 +232,6 @@ function requesetParsing(insertData, apiType, callback) {
       break;
 
     case 'avgSidoPrice': // 시도별 평균가격
-      // http: //www.opinet.co.kr/api/avgSidoPrice.do?out=json&code=XXXXX
       url = "http://www.opinet.co.kr/api/avgSidoPrice.do";
       forms.sido = insertData.sido;
       if (insertData.prodcd != null || insertData.prodcd != undefined || insertData.prodcd != '') {

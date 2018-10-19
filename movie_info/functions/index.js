@@ -60,14 +60,14 @@ function requesetParsing(insertData, dayType, callback) {
   //insertData는 json으로 들어온다. insertData.movieName, insertData.date
   let url = ''; //URL
   let forms = {
-    key: '380da2340a8f0017bf5b373e10fc722c',
+    key: '서비스키 입력', // 서비스키
     targetDt: insertData.date
   }
 
   switch (dayType) {
     //사이트 자체 파싱
     //http://www.kobis.or.kr/kobisopenapi/homepg/apiservice/searchServiceInfo.do
-    //www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchWeeklyBoxOfficeList.json?key=380da2340a8f0017bf5b373e10fc722c&targetDt=20180923
+
     //주간은 전주 일요일까지를 기준으로 조회가 가능 (최종 일요일로 해주는 로직 짜야 함)
     case 'Day': //일별 조회
       url = "http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchWeeklyBoxOfficeList.json";

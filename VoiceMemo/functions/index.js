@@ -11,7 +11,7 @@ const nodemailer = require('nodemailer');
 
 //REF: https://actions-on-google.github.io/actions-on-google-nodejs/classes/conversation.profile.html
 
-const CLIENT_ID = "270308679564-io5q8eemppla50c543mjsetkh7vtbnr8.apps.googleusercontent.com"
+const CLIENT_ID = "클라이언트 아이디"
 // Dialogflow
 const app = dialogflow({
   clientId: CLIENT_ID,
@@ -137,10 +137,10 @@ app.intent('email', (conv, params, signin) => {
         service: 'gmail',
         auth: {
           user: 'noreply.mailsenderaog@gmail.com',
-          pass: 'scitmaster987^'
+          pass: '암호'// 암호넣기 
         }
       });
-      // 노출금지. codeshare시 user, pass　삭제제
+      // 노출금지. codeshare시 user, pass　삭제
 
       // 보내는 매일 생성
       var mailOptions = {

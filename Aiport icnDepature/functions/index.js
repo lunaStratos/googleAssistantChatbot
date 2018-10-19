@@ -147,7 +147,6 @@ let arrays = [{
 }];
 
 //api 설명 http://openapi.airport.kr/pubc/pubr/cmm/CMPubrHome/viewRQDevGuideList.do
-//http://openapi.airport.kr/openapi/service/StatusOfDepartures/getDeparturesCongestion?ServiceKey=h8JLcESwAVXzmfaef3OAz81CQZ1uW5S8fgY7Et46VPk2hAdlqCBHbHPskMq4wO9NDf32iV7yqiZSgnAjVWtP7g%3D%3D&terno=1
 
 // getTerminalGateXmlConnect
 function getTerminalGateXmlConnect(code, gateNum, callback) {
@@ -163,7 +162,7 @@ function getTerminalGateXmlConnect(code, gateNum, callback) {
   } else {
     insertTerminal = 2;
   }
-  var url = "http://openapi.airport.kr/openapi/service/StatusOfDepartures/getDeparturesCongestion?ServiceKey=h8JLcESwAVXzmfaef3OAz81CQZ1uW5S8fgY7Et46VPk2hAdlqCBHbHPskMq4wO9NDf32iV7yqiZSgnAjVWtP7g%3D%3D&terno=" + insertTerminal;
+  var url = "http://openapi.airport.kr/openapi/service/StatusOfDepartures/getDeparturesCongestion?ServiceKey=서비스&terno=" + insertTerminal; //서비스키 입력
   console.log("terminal 1,2 : " + insertTerminal); //터미널
   console.log("url: " + url);
 
