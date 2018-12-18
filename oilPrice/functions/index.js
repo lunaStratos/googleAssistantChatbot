@@ -941,9 +941,7 @@ app.intent(ALLROUND_INTENT, (conv, params, confirmationGranted) => {
 //이벤트에 actions_intent_PERMISSION넣기
 //위치정보 권한 수락 YES
 app.intent(ALLROUND_INTENT_YES, (conv, params, confirmationGranted) => {
-  console.log("ALLROUND_INTENT_YES")
-  console.log('params', params)
-  console.log("confirmationGranted: ", confirmationGranted)
+
   if (confirmationGranted == false) { //권한 없으면
 
     conv.ask(new SimpleResponse({

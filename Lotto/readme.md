@@ -31,6 +31,9 @@ api버전은 V1이었지만, 12월 15일을 기점으로 **V2으로 제작** 되
 
 챗봇을 만드는 사람이 최대한 이해하기 쉽게 쓰고자 했지만 혹시 어려운 점이 있으면 E-mail을 보내주시면 되겠습니다.
 
+Context와 Event와 같은 기능들은 [그외기능
+](https://github.com/lunaStratos/googleAssistantChatbot/tree/master/template)에서 설명하겠습니다.
+
 ## 특징
 
 이 샘플코드의 특징은 다음과 같습니다.
