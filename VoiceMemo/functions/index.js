@@ -137,7 +137,7 @@ app.intent('email', (conv, params, signin) => {
         service: 'gmail',
         auth: {
           user: 'noreply.mailsenderaog@gmail.com',
-          pass: '암호'// 암호넣기 
+          pass: '암호'// 암호넣기
         }
       });
       // 노출금지. codeshare시 user, pass　삭제
@@ -168,7 +168,7 @@ app.intent('email', (conv, params, signin) => {
 
       conv.close(emailId + defaulMessage)
 
-    });
+    });// return async
 
 })
 

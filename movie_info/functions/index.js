@@ -262,6 +262,7 @@ app.intent(MOVIES_INTENT, (conv) => {
   conv.data.fallbackCount = 0;
   let dayType = conv.parameters['dayordays']; //주간 오늘 => 이걸로 api주소가 갈린다.
   let dateRaw = conv.parameters['date']; // 조회할 날짜 https://dialogflow.com/docs/reference/system-entities#date-ko-v2
+  // dateRaw 들어오는 형식 => 2019-01-20T12:00:00+09:00
   let nationType = conv.parameters['nation']; // 외국영화 한국영화 여부 (없으면 null ''  )
   let movieType = conv.parameters['movieType']; // 상업성여부 (없으면 null이나 '')
 
@@ -319,9 +320,9 @@ app.intent(MOVIES_INTENT, (conv) => {
           mm = mm
         }
       }
-    }
+    } //if (dateRawDate.getTime() > nowDate.getTime()) {
 
-  }
+  } //if (dateRaw == null || dateRaw == undefined || dateRaw == '') {
 
   //최종 날짜 조립
   const complateDate = yyyy + '' + mm + '' + dd //yyyyMMdd형태로 만든다.

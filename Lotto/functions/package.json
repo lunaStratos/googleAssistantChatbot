@@ -1,16 +1,10 @@
 {
   "name": "LunaStratos",
   "engines": {
-    "node": ">=4.3.2"
+    "node": ">=7.0"
   },
   "description": "LottoNumberGenetator",
   "main": "index.js",
-  "devDependencies": {
-    "@google-cloud/storage": "^1.4.0",
-    "actions-on-google": "^1.6.1",
-    "package": "^1.0.1",
-    "package.json": "^2.0.1"
-  },
   "scripts": {
     "deploy": "gcloud app deploy",
     "start": "node index.js",
@@ -24,12 +18,14 @@
   "license": "ISC",
   "dependencies": {
     "@google-cloud/storage": "^1.4.0",
-    "actions-on-google": "^1.6.1",
+    "actions-on-google": "^2.2.0",
+    "cheerio": "^1.0.0-rc.2",
+    "firebase-admin": "^5.12.1",
+    "firebase-functions": "^1.1.0",
+    "iconv-lite": "^0.4.24",
     "package": "^1.0.1",
     "package.json": "^2.0.1",
-    "promise": "^8.0.1",
-    "request": "^2.83.0",
-    "cheerio": "^1.0.0-rc.2",
-    "iconv-lite": "^0.4.23"
+    "promise": "^8.0.2",
+    "request": "^2.88.0"
   }
 }

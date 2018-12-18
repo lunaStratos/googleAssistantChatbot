@@ -190,69 +190,7 @@ function getTerminalGateXmlConnect(code, gateNum, callback) {
     // xml parsing section
     let xml = body.toString();
     console.log("body: " + body.toString());
-    parser.parseString(xml, function(err, result) {
-      console.log(result);
-      console.log(JSON.stringify(result));
-      //       < SearchSTNInfoByFRCodeService >
-      // <list_total_count>1</list_total_count>
-      // <RESULT>
-      // <CODE>INFO-000</CODE>
-      // <MESSAGE>정상 처리되었습니다</MESSAGE>
-      // </RESULT>
-      var original = result.response.body[0].items[0].item[0];
-      var status = result.response.header[0].resultCode[0];
-      console.log("status: " + status);
-
-      if (status === '00') { //00 에러없음
-
-        //search arrays
-        let getValue = arrays.find(item => {
-          console.log(names);
-          return item.code == names;
-        });
-
-        console.log(JSON.stringify(getValue));
-
-        if (insertTerminal == '1') {
-          callback(null, {
-            code: 200,
-            gateinfo1: original.gateinfo1[0],
-            gateinfo2: original.gateinfo2[0],
-            gateinfo3: original.gateinfo3[0],
-            gateinfo4: original.gateinfo4[0],
-            status: 'success',
-            cgtdt: original.cgtdt[0],
-            cgthm: original.cgthm[0],
-            imageLink: getValue.imageLink,
-            title: getValue.title,
-            name: getValue.name,
-            infoText: getValue.infoText,
-            staionCode: getValue.code
-          });
-        } else { //terminal2
-          callback(null, {
-            code: 200,
-            gateinfo1: original.gateinfo1[0],
-            gateinfo2: original.gateinfo2[0],
-            status: 'success',
-            cgtdt: original.cgtdt[0],
-            cgthm: original.cgthm[0],
-            imageLink: getValue.imageLink,
-            title: getValue.title,
-            name: getValue.name,
-            infoText: getValue.infoText,
-            staionCode: getValue.code
-          });
-        }
-      } else {
-        callback(err, {
-          code: 400,
-          name: '',
-          status: 'fail'
-        });
-      }
-
-    });
+    
 
 
   });
