@@ -12,12 +12,11 @@
 "로또마스터한테 말하기" 로 인보케이션 가능.
 언어는 한국어 입니다.
 DialogFlow와 **Google cloud functions**기능으로 **nodeJS**를 이용해서 만들었습니다.
-api버전은 V1이었지만, 12월 15일을 기점으로 V2으로 제작 되었습니다.
-앱은 기본적으로 로또번호를 생성해 주며 영어와 일본어 버전은 원샷 어플로 실행이 됩니다.
-한국어 앱은 번호 생성후에 사용자의 명령을 기다립니다.
-request npm으로 나눔로또 api를 이용, 현재회차와 지정한 회차에 따른 로또번호를 받아옵니다.
+api버전은 V1이었지만, 12월 15일을 기점으로 **V2으로 제작** 되었습니다.
+앱은 기본적으로 로또번호를 생성해 주며 영어와 일본어 버전은 원샷 어플로 실행이 되며, 한국어 앱은 번호 생성후에 사용자의 명령을 기다립니다.
+**request npm**으로 나눔로또 api를 이용하여 지정한 회차에 따른 로또번호를 받아오며, 현재회차는 크롤링을 통해서 구현하였습니다.
 
-본 페이지의 샘플코드는 Google GCP의 [Cloud Functions](https://cloud.google.com/functions/)에 올릴 수 있게 만들어진 샘플코드 입니다. 여기서는 로또 당첨 번호를 조회하는 챗봇으로 설명을 합니다. 설명하는 코드를 위해서 만든 챗봇이 **로또번호 조회**인 이유는 다음과 같습니다.
+본 페이지의 샘플코드는 **Google GCP**의 [Cloud Functions](https://cloud.google.com/functions/)에 올릴 수 있게 만들어진 샘플코드 입니다. 여기서는 로또 당첨 번호를 조회하는 챗봇으로 설명을 합니다. 설명하는 코드를 위해서 만든 챗봇이 **로또번호 조회**인 이유는 다음과 같습니다.
 
 <p align="center">
 <img src="./img/lotto.png?raw=true"/>
@@ -495,7 +494,7 @@ Action on google 레퍼런스를 보시면 [다양한 응답방법](https://deve
 <img src="./img/ndialogflow_integration_02.png?raw=true"/>
 </p>
 
-그러면 이 화면이 뜨는데 위에 설정된 값을 입력해 줍니다. 추가를 하는 것은 [implicit invocation](https://developers.google.com/actions/discovery/implicit)을 설정하는 부분으로서, 단순히 "로또마스터한테 말하기"같은 기능실행이 아닌 **"로또마스터 한테 이번주 로또번호 조회해줘"**와 기능을 직접적으로 선택 지정하여 동작하는 **invocation**입니다. 바로 기능을 다이렉트로 동작한다는 점에서 빠르게 실행할 수 있습니다.
+그러면 이 화면이 뜨는데 위에 설정된 값을 입력해 줍니다. 추가를 하는 것은 [implicit invocation](https://developers.google.com/actions/discovery/implicit)을 설정하는 부분으로서, 단순히 "로또마스터한테 말하기"같은 기능실행이 아닌 **로또마스터 한테 이번주 로또번호 조회해줘**와 기능을 직접적으로 선택 지정하여 동작하는 **invocation**입니다. 기능을 다이렉트로 동작한다는 점에서 빠르게 실행할 수 있습니다. 이 기능은 시뮬레이션 말고 **실제 폰에서 테스트 해보는게 더 정확**합니다.
 
 <p align="center">
 <img src="./img/dialogflow_test_01.png?raw=true"/>
@@ -565,7 +564,7 @@ Policy 주소를 넣는 부분입니다. 저는 [사이트
 <img src="./img/nugu_register_10.png?raw=true"/>
 </p>
 
-이렇게 해서 설명을 완성하면, Release에서 deploy를 해주면 됩니다.
+이렇게 해서 설명을 완성하면, **Release**에서 **deploy**를 해주면 됩니다.
 심사가 통과되면 메일이 올거고, deny를 받으면 에러사항이 적혀서 옵니다.
 
 

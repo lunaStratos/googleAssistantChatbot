@@ -313,7 +313,7 @@ function requesetParsing(insertData, apiType, callback) {
   let url = ''; //URL
 
   let forms = {}
-  const serviceKey = 'aAfuvIitnAf6ckcIREyJXGfFEDWy7dah3nWnhgcGoL0%2BqCpEgu4MWRBmY89qcQvJreZBb%2F7Npm0MGsBjv6Es3Q%3D%3D'
+  const serviceKey = '서비스키'
 
   let requestJson = {
     method: 'GET',
